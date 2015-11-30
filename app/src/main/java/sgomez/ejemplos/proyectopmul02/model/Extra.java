@@ -7,8 +7,8 @@ import java.util.Date;
  * Created by sgomez on 28/11/2015.
  */
 public class Extra {
-    private int idExtra;
-    private int idUsuario;
+    private String idExtra;
+    private String idUsuario;
     private Date fechaExtra;
     private String momentoDia;
     private Local Local;
@@ -33,19 +33,19 @@ public class Extra {
         this.camareros = camareros;
     }
 
-    public int getIdExtra() {
+    public String getIdExtra() {
         return idExtra;
     }
 
-    public void setIdExtra(int idExtra) {
+    public void setIdExtra(String idExtra) {
         this.idExtra = idExtra;
     }
 
-    public int getIdUsuario() {
+    public String getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -73,7 +73,7 @@ public class Extra {
         return Local;
     }
 
-    public void setIdLocal(int idLocal) {
+    public void setIdLocal(String idLocal) {
         //falta buscar todos los datos en tabla local
         this.Local = new Local(idLocal);
     }
@@ -106,7 +106,7 @@ public class Extra {
         this.festividad = festividad;
     }
 
-    public void setFestividad(int idFestividad) {
+    public void setFestividad(String idFestividad) {
         this.festividad = new Festividad(idFestividad);
     }
 
@@ -125,7 +125,7 @@ public class Extra {
     public void setCocina(Cocina cocina) {
         this.cocina = cocina;
     }
-    public void setCocina(int idCocina) {
+    public void setCocina(String idCocina) {
         this.cocina = new Cocina(idCocina);
     }
 

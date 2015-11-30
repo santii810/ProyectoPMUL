@@ -10,7 +10,7 @@ public interface CocinaRepository {
 
     void addCocina(Cocina cocina);
 
-    void deleteCocina(int idCocina);
+    void deleteCocina(String idCocina);
 
-    Cocina getCocina(int idCocina);
+    Cocina getCocina(String idCocina);
 }

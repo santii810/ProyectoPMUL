@@ -4,7 +4,7 @@ package sgomez.ejemplos.proyectopmul02.model;
  * Created by sgomez on 28/11/2015.
  */
 public class Cocina {
-    private int idCocina;
+    private String idCocina;
     private String nombre;
     boolean activa ;
 
@@ -24,18 +24,18 @@ public class Cocina {
         this.nombre = nombre;
     }
 
-    public Cocina(int idCocina) {
+    public Cocina(String idCocina) {
         this.idCocina = idCocina;
     }
 
-    public int getIdCocina() {
+    public String getIdCocina() {
         return idCocina;
     }
 
     public Cocina() {
     }
 
-    public void setIdCocina(int idCocina) {
+    public void setIdCocina(String idCocina) {
         this.idCocina = idCocina;
     }
 }

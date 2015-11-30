@@ -4,7 +4,7 @@ package sgomez.ejemplos.proyectopmul02.model;
  * Created by sgomez on 29/11/2015.
  */
 public class Camarero {
-    private int idCamarero;
+    private String idCamarero;
     private String Nombre;
     private boolean activo;
 
@@ -16,11 +16,11 @@ public class Camarero {
         this.activo = activo;
     }
 
-    public int getIdCamarero() {
+    public String getIdCamarero() {
         return idCamarero;
     }
 
-    public void setIdCamarero(int id) {
+    public void setIdCamarero(String id) {
         this.idCamarero = id;
     }
 

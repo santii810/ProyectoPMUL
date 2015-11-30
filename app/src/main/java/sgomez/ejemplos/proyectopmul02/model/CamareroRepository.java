@@ -10,7 +10,7 @@ public interface CamareroRepository {
 
     void addCamarero(Camarero camarero);
 
-    void deleteCamarero(int idCamarero);
+    void deleteCamarero(String idCamarero);
 
-    Camarero getCamarero(int idCamarero);
+    Camarero getCamarero(String idCamarero);
 }

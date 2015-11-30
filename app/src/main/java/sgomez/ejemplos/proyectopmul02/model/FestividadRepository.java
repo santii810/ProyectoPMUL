@@ -8,6 +8,6 @@ import java.util.ArrayList;
 public interface FestividadRepository {
     ArrayList<Festividad> getFestividades();
     void addFestividad(Festividad festividad);
-    void deleteFestividad(int idFestividad);
-    Festividad getFestividad(int idFestividad);
+    void deleteFestividad(String idFestividad);
+    Festividad getFestividad(String idFestividad);
 }

@@ -4,7 +4,7 @@ package sgomez.ejemplos.proyectopmul02.model;
  * Created by sgomez on 28/11/2015.
  */
 public class Festividad {
-    private int id;
+    private String id;
 
     public Festividad() {
     }
@@ -20,15 +20,15 @@ public class Festividad {
 
     private String nombre;
 
-    public Festividad(int id) {
+    public Festividad(String id) {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

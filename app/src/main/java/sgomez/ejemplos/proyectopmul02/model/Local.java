@@ -4,7 +4,7 @@ package sgomez.ejemplos.proyectopmul02.model;
  * Created by sgomez on 28/11/2015.
  */
 public class Local {
-    private int idLocal;
+    private String idLocal;
     private String nombre;
     private String direccion;
     private String tipoLocal;
@@ -33,11 +33,11 @@ public class Local {
         this.direccion = direccion;
     }
 
-    public Local(int idLocal) {
+    public Local(String idLocal) {
         this.idLocal = idLocal;
     }
 
-    public int getIdLocal() {
+    public String getIdLocal() {
         return idLocal;
     }
 
@@ -49,7 +49,7 @@ public class Local {
         this.nombre = nombre;
     }
 
-    public void setIdLocal(int idLocal) {
+    public void setIdLocal(String idLocal) {
         this.idLocal = idLocal;
     }
 }

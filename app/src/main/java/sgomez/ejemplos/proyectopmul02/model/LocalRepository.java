@@ -8,6 +8,6 @@ import java.util.ArrayList;
 public interface LocalRepository {
     ArrayList<Local> getLocales();
     void addLocal(Local local);
-    void deleteLocal(int idLocal);
-    Local getLocal(int idLocal);
+    void deleteLocal(String idLocal);
+    Local getLocal(String idLocal);
 }
