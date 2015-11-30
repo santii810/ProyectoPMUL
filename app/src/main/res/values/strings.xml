@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ProyectoPMUL02</string>
+    <string name="menuLogin">Iniciar sesion</string>
+    <string name="addExtra">Añadir extra</string>
+    <string name="addLocal">Añadir local</string>
+    <string name="addCamarero">Añadir camarero</string>
+    <string name="addCocina">Añadir cocina</string>
+    <string name="localAddress">Direccion local</string>
+    <string name="localName">Nombre local</string>
+    <string name="cancel">Cancelar</string>
+    <string name="addData">Añadir datos</string>
+</resources>

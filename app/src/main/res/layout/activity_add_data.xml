@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="sgomez.ejemplos.proyectopmul02.AddDataActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/addExtra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonAddExtraOnClick"
+            android:text="@string/addExtra" />
+
+        <Button
+            android:id="@+id/addLocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="butttonAddLocalOnClick"
+            android:text="@string/addLocal" />
+
+        <Button
+            android:id="@+id/addCamarero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/addCamarero" />
+
+        <Button
+            android:id="@+id/addCocina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/addCocina" />
+    </LinearLayout>
+</RelativeLayout>
