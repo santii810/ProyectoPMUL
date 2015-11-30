@@ -125,6 +125,7 @@ public class Extra {
     public void setCocina(Cocina cocina) {
         this.cocina = cocina;
     }
+
     public void setCocina(String idCocina) {
         this.cocina = new Cocina(idCocina);
     }

@@ -7,7 +7,10 @@ import java.util.ArrayList;
  */
 public interface FestividadRepository {
     ArrayList<Festividad> getFestividades();
+
     void addFestividad(Festividad festividad);
+
     void deleteFestividad(String idFestividad);
+
     Festividad getFestividad(String idFestividad);
 }

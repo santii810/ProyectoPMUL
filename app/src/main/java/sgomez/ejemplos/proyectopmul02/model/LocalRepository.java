@@ -7,7 +7,10 @@ import java.util.ArrayList;
  */
 public interface LocalRepository {
     ArrayList<Local> getLocales();
+
     void addLocal(Local local);
+
     void deleteLocal(String idLocal);
+
     Local getLocal(String idLocal);
 }

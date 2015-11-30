@@ -9,7 +9,7 @@ import sgomez.ejemplos.proyectopmul02.model.LocalRepository;
 import sgomez.ejemplos.proyectopmul02.model.ParseLocalRepository;
 
 public class MainActivity extends AppCompatActivity {
- private static LocalRepository localRepository;
+    private static LocalRepository localRepository;
 
     public static LocalRepository getLocalRepository() {
         return localRepository;
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         localRepository = new ParseLocalRepository(this);
 
     }
+
     public void buttonAddDataOnClick(View view) {
         Intent intent = new Intent(this, AddDataActivity.class);
         startActivity(intent);

@@ -7,7 +7,10 @@ import java.util.ArrayList;
  */
 public interface ExtraRepository {
     ArrayList<Extra> getExtras();
+
     void addExtra(Extra extra);
+
     void deleteExtra(String extraId);
+
     Extra getExtra(String extraId);
 }

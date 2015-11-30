@@ -6,7 +6,7 @@ package sgomez.ejemplos.proyectopmul02.model;
 public class Cocina {
     private String idCocina;
     private String nombre;
-    boolean activa ;
+    boolean activa;
 
     public boolean isActiva() {
         return activa;

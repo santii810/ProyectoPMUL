@@ -55,7 +55,7 @@ public class ParseLocalRepository implements LocalRepository {
             query.whereEqualTo("objectId", idLocal);
             List<ParseObject> result = query.find();
 
-            if(result.size() > 0) {
+            if (result.size() > 0) {
                 result.get(0).delete();
             }
         } catch (ParseException e) {
