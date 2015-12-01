@@ -1,4 +1,4 @@
-package model;
+package sgomez.ejemplos.proyectopmul02.model;
 
 import android.content.Context;
 
@@ -16,14 +16,13 @@ import sgomez.ejemplos.proyectopmul02.MainActivity;
 public class ParseLocalRepository implements LocalRepository {
     public ParseLocalRepository(Context context) {
         // Enable Local Datastore.
-        Parse.enableLocalDatastore(context);
+/*        Parse.enableLocalDatastore(context);
         Parse.initialize(context, MainActivity.getAPLICATIONID(), MainActivity.getCLIENTKEY());
-
+*/
     }
-
+/*
     @Override
     public ArrayList<Local> getLocales() {
-
         ArrayList<Local> locales = new ArrayList<>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Local");
         try {
@@ -39,6 +38,17 @@ public class ParseLocalRepository implements LocalRepository {
             e.printStackTrace();
         }
         return locales;
+    }
+*/
+
+    @Override
+    public ArrayList<Local> getLocales() {
+        ArrayList<Local> locales = new ArrayList<>( );
+        locales.add(new Local("local1","direccion1"));
+        locales.add(new Local("local2","direccion2"));
+        locales.add(new Local("local3","direccion3"));
+        locales.add(new Local("local4","direccion4"));
+        return null;
     }
 
     @Override

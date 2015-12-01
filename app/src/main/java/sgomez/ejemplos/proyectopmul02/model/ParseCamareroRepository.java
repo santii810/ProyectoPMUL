@@ -1,4 +1,4 @@
-package model;
+package sgomez.ejemplos.proyectopmul02.model;
 
 import android.content.Context;
 

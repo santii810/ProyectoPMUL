@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import model.LocalRepository;
-import model.ParseLocalRepository;
+import sgomez.ejemplos.proyectopmul02.model.LocalRepository;
+import sgomez.ejemplos.proyectopmul02.model.ParseLocalRepository;
 
 public class MainActivity extends AppCompatActivity {
     private static LocalRepository localRepository;
@@ -40,5 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonViewDataOnClick(View view) {
         Intent intent = new Intent(this, ViewDataActivity.class);
+        startActivity(intent);
     }
 }
