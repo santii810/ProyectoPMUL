@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="130dp"
             android:layout_marginTop="20dp"
-            android:text="@string/active" />
+            android:textOn="@string/active"
+            android:textOff="@string/unactive"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/addCamarero" />
+                android:text="@string/addCamarero"
+                android:onClick="buttonAddCamareroOnClick"/>
 
             <Button
                 android:id="@+id/buttonAddCamareroCancel"

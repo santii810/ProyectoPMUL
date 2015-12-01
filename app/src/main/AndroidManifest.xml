@@ -21,6 +21,10 @@
         </activity>
         <activity android:name=".AddCocinaActivity" >
         </activity>
+        <activity android:name=".ViewDataActivity" >
+        </activity>
+        <activity android:name=".ViewLocalesActivity" >
+        </activity>
     </application>
 
 </manifest>

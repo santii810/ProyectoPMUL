@@ -38,4 +38,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void buttonViewDataOnClick(View view) {
+        Intent intent = new Intent(this, ViewDataActivity.class);
+    }
 }

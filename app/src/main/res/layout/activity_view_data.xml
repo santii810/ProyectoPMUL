@@ -7,35 +7,33 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context="sgomez.ejemplos.proyectopmul02.ViewDataActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/buttonPerfil"
+            android:id="@+id/viewLocales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="buttonPerfilOnClick"
-            android:text="@string/perfil" />
+            android:onClick="buttonViewLocalesOnClick"
+            android:text="@string/viewLocales" />
 
         <Button
-            android:id="@+id/buttonAddData"
+            android:id="@+id/viewCamareros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="buttonAddDataOnClick"
-            android:text="@string/addData" />
+            android:onClick="buttonViewCamarerosOnClick"
+            android:text="@string/viewCamareros" />
 
         <Button
-            android:id="@+id/buttonViewDAta"
+            android:id="@+id/viewCocinas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="buttonViewDataOnClick"
-            android:text="@string/viewData" />
-
-
+            android:onClick="buttonViewCocinasOnClick"
+            android:text="@string/viewCocinas" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -10,6 +10,8 @@ import sgomez.ejemplos.proyectopmul02.model.Local;
 public class AddDataActivity extends AppCompatActivity {
     public final static int ADDEXTRA_REQUEST_CODE = 1;
     public final static int ADDLOCAL_REQUEST_CODE = 2;
+    public final static int ADDCAMARERO_REQUEST_CODE = 3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,12 @@ public class AddDataActivity extends AppCompatActivity {
                     String nombreLocal = data.getStringExtra("nombreLocal");
                     String direccionLocal = data.getStringExtra("direccionLocal");
                     MainActivity.getLocalRepository().addLocal(new Local(nombreLocal, direccionLocal));
+                }
+                break;
+            case ADDCAMARERO_REQUEST_CODE:
+                if (resultCode == RESULT_OK) {
+                    String nombreCamarero = data.getStringExtra("nombreCamarero");
+
                 }
                 break;
         }

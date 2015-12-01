@@ -14,4 +14,8 @@
     <string name="active">Activo</string>
     <string name="camareroName">Nombre camarero</string>
     <string name="cocinaName">Nombre cocina</string>
+    <string name="unactive">Desactivo</string>
+    <string name="viewLocales">Ver locales</string>
+    <string name="viewCamareros">Ver camareros</string>
+    <string name="viewCocinas">Ver cocinas</string>
 </resources>
