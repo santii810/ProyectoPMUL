@@ -1,4 +1,4 @@
-package sgomez.ejemplos.proyectopmul02.model;
+package model;
 
 import java.util.ArrayList;
 
@@ -11,6 +11,8 @@ public interface CamareroRepository {
     void addCamarero(Camarero camarero);
 
     void deleteCamarero(String idCamarero);
+
+    void deleteCamareros(ArrayList<Camarero> camareros);
 
     Camarero getCamarero(String idCamarero);
 }

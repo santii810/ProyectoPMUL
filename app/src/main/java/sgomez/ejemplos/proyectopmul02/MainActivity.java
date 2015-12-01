@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import sgomez.ejemplos.proyectopmul02.model.LocalRepository;
-import sgomez.ejemplos.proyectopmul02.model.ParseLocalRepository;
+import model.LocalRepository;
+import model.ParseLocalRepository;
 
 public class MainActivity extends AppCompatActivity {
     private static LocalRepository localRepository;

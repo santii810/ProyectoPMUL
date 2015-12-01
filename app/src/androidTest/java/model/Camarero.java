@@ -1,4 +1,4 @@
-package sgomez.ejemplos.proyectopmul02.model;
+package model;
 
 /**
  * Created by sgomez on 29/11/2015.

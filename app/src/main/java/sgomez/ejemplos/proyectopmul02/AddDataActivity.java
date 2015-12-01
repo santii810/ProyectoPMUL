@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import sgomez.ejemplos.proyectopmul02.model.Local;
+import model.Local;
 
 public class AddDataActivity extends AppCompatActivity {
     public final static int ADDEXTRA_REQUEST_CODE = 1;

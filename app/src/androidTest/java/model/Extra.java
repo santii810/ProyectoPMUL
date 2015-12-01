@@ -1,4 +1,4 @@
-package sgomez.ejemplos.proyectopmul02.model;
+package model;
 
 import java.util.ArrayList;
 import java.util.Date;

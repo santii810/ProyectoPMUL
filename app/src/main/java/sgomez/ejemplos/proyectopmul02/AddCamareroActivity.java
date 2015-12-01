@@ -18,7 +18,8 @@ public class AddCamareroActivity extends AppCompatActivity {
     public void buttonAddCamareroOnClick(View view) {
         Intent backData = new Intent();
         backData.putExtra("nombreCamarero", ((EditText) findViewById(R.id.editTextCamareroName)).getText().toString());
-        //string switch = ((Switch) findViewById(R.id.switchCamareroActivo).);
+
+        //string switch = ((Switch) findViewById(R.id.switchCamareroActivo).getTag());
         //backData.putExtra("activo", true );
         setResult(RESULT_OK, backData);
     }

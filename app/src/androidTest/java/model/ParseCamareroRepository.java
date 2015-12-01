@@ -1,4 +1,4 @@
-package sgomez.ejemplos.proyectopmul02.model;
+package model;
 
 import android.content.Context;
 
@@ -61,6 +61,11 @@ public class ParseCamareroRepository implements CamareroRepository {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void deleteCamareros(ArrayList<Camarero> camareros) {
+
     }
 
     @Override
