@@ -10,14 +10,15 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by dam209 on 30/11/2015.
- */
+import sgomez.ejemplos.proyectopmul02.MainActivity;
+
+
 public class ParseLocalRepository implements LocalRepository {
     public ParseLocalRepository(Context context) {
         // Enable Local Datastore.
         Parse.enableLocalDatastore(context);
-        Parse.initialize(context, "8H90I8DD1HC7bC1DSTZ0A3Hx8R9IvjpfYfnMFAaD", "jgFlObtthO7RJEqIFa7oeM87prVKyleiNche125E");
+        Parse.initialize(context, MainActivity.getAPLICATIONID(), MainActivity.getCLIENTKEY());
+
     }
 
     @Override

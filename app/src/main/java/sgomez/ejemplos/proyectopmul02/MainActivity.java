@@ -10,6 +10,16 @@ import sgomez.ejemplos.proyectopmul02.model.ParseLocalRepository;
 
 public class MainActivity extends AppCompatActivity {
     private static LocalRepository localRepository;
+    private static final String APLICATIONID = "8H90I8DD1HC7bC1DSTZ0A3Hx8R9IvjpfYfnMFAaD";
+    private static final String CLIENTKEY = "jgFlObtthO7RJEqIFa7oeM87prVKyleiNche125E";
+
+    public static String getAPLICATIONID() {
+        return APLICATIONID;
+    }
+
+    public static String getCLIENTKEY() {
+        return CLIENTKEY;
+    }
 
     public static LocalRepository getLocalRepository() {
         return localRepository;

@@ -3,16 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/addData"
-        android:id="@+id/buttonAddData"
-        android:onClick="buttonAddDataOnClick" />
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonAddData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonAddDataOnClick"
+            android:text="@string/addData" />
+
+        <Button
+            android:id="@+id/buttonViewDAta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonViewDataOnClick"
+            android:text="@string/viewData" />
+
+        <Button
+            android:id="@+id/buttonPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonPerfilOnClick"
+            android:text="@string/perfil" />
+    </LinearLayout>
+
 </RelativeLayout>

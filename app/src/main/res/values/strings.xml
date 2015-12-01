@@ -9,4 +9,9 @@
     <string name="localName">Nombre local</string>
     <string name="cancel">Cancelar</string>
     <string name="addData">Añadir datos</string>
+    <string name="viewData">Visualizar datos</string>
+    <string name="perfil">Perfil</string>
+    <string name="active">Activo</string>
+    <string name="camareroName">Nombre camarero</string>
+    <string name="cocinaName">Nombre cocina</string>
 </resources>
