@@ -8,6 +8,11 @@ public class Camarero {
     private String Nombre;
     private boolean activo;
 
+    public Camarero(String nombre, boolean activo) {
+        Nombre = nombre;
+        this.activo = activo;
+    }
+
     public boolean isActivo() {
         return activo;
     }

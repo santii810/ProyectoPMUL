@@ -12,7 +12,5 @@ public interface CamareroRepository {
 
     void deleteCamarero(String idCamarero);
 
-    void deleteCamareros(ArrayList<Camarero> camareros);
-
     Camarero getCamarero(String idCamarero);
 }

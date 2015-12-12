@@ -6,15 +6,25 @@ package sgomez.ejemplos.proyectopmul02.model;
 public class Cocina {
     private String idCocina;
     private String nombre;
-    boolean activa;
+    boolean activo;
 
-    public boolean isActiva() {
-        return activa;
+
+    public Cocina(String nombre, boolean activo) {
+        this.nombre = nombre;
+        this.activo = activo;
     }
 
-    public void setActiva(boolean activa) {
-        this.activa = activa;
+    public Cocina() {
     }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -30,9 +40,6 @@ public class Cocina {
 
     public String getIdCocina() {
         return idCocina;
-    }
-
-    public Cocina() {
     }
 
     public void setIdCocina(String idCocina) {

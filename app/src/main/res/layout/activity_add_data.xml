@@ -31,11 +31,13 @@
         <Button
             android:id="@+id/addCamarero"
             android:layout_width="match_parent"
+            android:onClick="buttonAddCamareroOnClick"
             android:layout_height="wrap_content"
             android:text="@string/addCamarero" />
 
         <Button
             android:id="@+id/addCocina"
+            android:onClick="buttonAddCocinaOnClick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/addCocina" />

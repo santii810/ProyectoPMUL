@@ -11,59 +11,58 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sgomez.ejemplos.proyectopmul02.MainActivity;
+import sgomez.ejemplos.proyectopmul02.R;
 
 
 public class ParseLocalRepository implements LocalRepository {
-    public ParseLocalRepository(Context context) {
-        // Enable Local Datastore.
-/*        Parse.enableLocalDatastore(context);
-        Parse.initialize(context, MainActivity.getAPLICATIONID(), MainActivity.getCLIENTKEY());
-*/
+    private final String DBNAME = "Local";
+    private final String TABLEID = "objectId";
+    private final String TABLENOMBRE = "nombreLocal";
+    private final String TABLEDIRECCION = "direccionLocal";
+
+    public ParseLocalRepository() {
+
+
     }
-/*
+
     @Override
     public ArrayList<Local> getLocales() {
         ArrayList<Local> locales = new ArrayList<>();
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Local");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
         try {
             List<ParseObject> result = query.find();
             for (ParseObject object : result) {
-                Local local = new Local();
-                local.setIdLocal(object.getObjectId());
-                local.setNombre(object.getString("nombreLocal"));
-                local.setDireccion(object.getString("direccionLocal"));
-                locales.add(local);
+                locales.add(rellenaLocal(object));
             }
         } catch (ParseException e) {
             e.printStackTrace();
         }
         return locales;
     }
-*/
 
     @Override
-    public ArrayList<Local> getLocales() {
-        ArrayList<Local> locales = new ArrayList<>( );
-        locales.add(new Local("local1","direccion1"));
-        locales.add(new Local("local2","direccion2"));
-        locales.add(new Local("local3","direccion3"));
-        locales.add(new Local("local4","direccion4"));
-        return null;
+    public ArrayList<String> getLocalNames() {
+        ArrayList<String> nombreLocales = new ArrayList<>();
+        for (Local local : this.getLocales()) {
+            nombreLocales.add(local.getNombre());
+        }
+        return nombreLocales;
     }
+
 
     @Override
     public void addLocal(Local local) {
-        ParseObject parseLocal = new ParseObject("Local");
-        parseLocal.put("nombreLocal", local.getNombre());
-        parseLocal.put("direccionLocal", local.getDireccion());
+        ParseObject parseLocal = new ParseObject(DBNAME);
+        parseLocal.put(TABLENOMBRE, local.getNombre());
+        parseLocal.put(TABLEDIRECCION, local.getDireccion());
         parseLocal.saveInBackground();
     }
 
     @Override
     public void deleteLocal(String idLocal) {
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Local");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
         try {
-            query.whereEqualTo("objectId", idLocal);
+            query.whereEqualTo(TABLEID, idLocal);
             List<ParseObject> result = query.find();
 
             if (result.size() > 0) {
@@ -76,7 +75,27 @@ public class ParseLocalRepository implements LocalRepository {
 
     @Override
     public Local getLocal(String idLocal) {
-        return null;
+        Local local = new Local();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        try {
+            query.whereEqualTo(TABLEID, idLocal);
+            List<ParseObject> result = query.find();
+
+            if (result.size() > 0) {
+                rellenaLocal(result.get(0));
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return local;
+    }
+
+    private Local rellenaLocal(ParseObject result) {
+        Local local = new Local();
+        local.setIdLocal(result.getObjectId());
+        local.setNombre(result.getString(TABLENOMBRE));
+        local.setDireccion(result.getString(TABLEDIRECCION));
+        return local;
     }
 }
 

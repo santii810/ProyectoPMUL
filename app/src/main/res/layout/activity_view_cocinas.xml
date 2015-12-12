@@ -7,13 +7,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="sgomez.ejemplos.proyectopmul02.ViewLocalesActivity">
-
+    tools:context="sgomez.ejemplos.proyectopmul02.ViewCocinasActivity">
     <ListView
-        android:id="@+id/listViewLocales"
+        android:id="@+id/listViewCocinas"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>
-
-
 </RelativeLayout>

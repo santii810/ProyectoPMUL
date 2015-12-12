@@ -1,4 +1,6 @@
 <resources>
+    <string name="parseId">8H90I8DD1HC7bC1DSTZ0A3Hx8R9IvjpfYfnMFAaD</string>
+    <string name="parseKey">jgFlObtthO7RJEqIFa7oeM87prVKyleiNche125E</string>
     <string name="app_name">ProyectoPMUL02</string>
     <string name="menuLogin">Iniciar sesion</string>
     <string name="addExtra">Añadir extra</string>
@@ -18,4 +20,13 @@
     <string name="viewLocales">Ver locales</string>
     <string name="viewCamareros">Ver camareros</string>
     <string name="viewCocinas">Ver cocinas</string>
+    <string name="local">Local</string>
+    <string name="chooseLocal">Elige local</string>
+    <string name="cobrado">Cobrado</string>
+    <string name="duracion">Duracion</string>
+    <string name="pagoAsociado">Pago asociado</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="cocina">Cocina</string>
+    <string name="festividad">Festividad</string>
+
 </resources>

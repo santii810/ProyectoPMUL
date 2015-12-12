@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sgomez.ejemplos.proyectopmul02">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,10 +20,10 @@
         </activity>
         <activity android:name=".AddDataActivity" />
         <activity android:name=".AddLocalActivity" />
-        <activity android:name=".AddCamareroActivity"></activity>
-        <activity android:name=".AddCocinaActivity"></activity>
-        <activity android:name=".ViewDataActivity"></activity>
-        <activity android:name=".ViewLocalesActivity"></activity>
+        <activity android:name=".AddCamareroActivity" />
+        <activity android:name=".AddCocinaActivity" />
+        <activity android:name=".ViewDataActivity" />
+        <activity android:name=".ViewLocalesActivity" />
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -29,7 +32,15 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".ViewLocalDataActivity"></activity>
+        <activity android:name=".ViewLocalDataActivity" />
+        <activity android:name=".ViewCamarerosActivity" />
+        <activity android:name=".ViewCamareroDataActivity" />
+        <activity android:name=".ViewCocinasActivity" />
+        <activity android:name=".ViewCocinaDataActivity" />
+        <activity android:name=".AddExtra1Activity" />
+        <activity android:name=".AddExtra2Activity" />
+        <activity android:name=".AddExtra3Activity" />
+        <activity android:name=".AddExtra4Activity"></activity>
     </application>
 
 </manifest>

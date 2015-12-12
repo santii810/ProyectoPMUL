@@ -24,13 +24,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Switch
-            android:id="@+id/switchCocinaActiva"
+        <ToggleButton
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="120dp"
+            android:id="@+id/toggleButtonCocina"
+            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/active" />
+            android:textOff="@string/unactive"
+            android:textOn="@string/active" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,6 +42,7 @@
 
             <Button
                 android:id="@+id/buttonAddCocina"
+                android:onClick="buttonAddCocinaOnClick"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -53,4 +56,5 @@
                 android:text="@string/cancel" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

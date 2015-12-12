@@ -16,24 +16,25 @@ import sgomez.ejemplos.proyectopmul02.MainActivity;
  * Created by dam209 on 01/12/2015.
  */
 public class ParseCamareroRepository implements CamareroRepository {
-    public ParseCamareroRepository(Context context) {
-        // Enable Local Datastore.
-        Parse.enableLocalDatastore(context);
-        Parse.initialize(context, MainActivity.getAPLICATIONID(), MainActivity.getCLIENTKEY());
 
+    private final String DBNAME = "Camarero";
+    private final String TABLEID = "objectId";
+    private final String TABLENOMBRE = "nombreCamarero";
+    private final String TABLEACTIVO = "activo";
+
+
+    public ParseCamareroRepository() {
+   
     }
 
     @Override
     public ArrayList<Camarero> getCamareros() {
         ArrayList<Camarero> camareros = new ArrayList<>();
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Camarero");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
         try {
             List<ParseObject> result = query.find();
             for (ParseObject object : result) {
-                Camarero camarero = new Camarero();
-                camarero.setIdCamarero(object.getObjectId());
-                camarero.setNombre(object.getString("nombreCamarero"));
-                camareros.add(camarero);
+                camareros.add(rellenaCamarero(object));
             }
         } catch (ParseException e) {
             e.printStackTrace();
@@ -43,16 +44,17 @@ public class ParseCamareroRepository implements CamareroRepository {
 
     @Override
     public void addCamarero(Camarero camarero) {
-        ParseObject parseLocal = new ParseObject("Camarero");
-        parseLocal.put("nombreCamarero", camarero.getNombre());
-        parseLocal.saveInBackground();
+        ParseObject parseCamarero = new ParseObject(DBNAME);
+        parseCamarero.put(TABLENOMBRE, camarero.getNombre());
+        parseCamarero.put(TABLEACTIVO, camarero.isActivo());
+        parseCamarero.saveInBackground();
     }
 
     @Override
     public void deleteCamarero(String idCamarero) {
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Camarero");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
         try {
-            query.whereEqualTo("objectId", idCamarero);
+            query.whereEqualTo(TABLEID, idCamarero);
             List<ParseObject> result = query.find();
 
             if (result.size() > 0) {
@@ -64,12 +66,28 @@ public class ParseCamareroRepository implements CamareroRepository {
     }
 
     @Override
-    public void deleteCamareros(ArrayList<Camarero> camareros) {
+    public Camarero getCamarero(String idCamarero) {
 
+        Camarero camarero = new Camarero();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        try {
+            query.whereEqualTo(TABLEID, idCamarero);
+            List<ParseObject> result = query.find();
+
+            if (result.size() > 0) {
+                rellenaCamarero(result.get(0));
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return camarero;
     }
 
-    @Override
-    public Camarero getCamarero(String idCamarero) {
-        return null;
+    private Camarero rellenaCamarero(ParseObject result) {
+        Camarero camarero = new Camarero();
+        camarero.setIdCamarero(result.getObjectId());
+        camarero.setNombre(result.getString(TABLENOMBRE));
+        camarero.setActivo(result.getBoolean(TABLEACTIVO));
+        return camarero;
     }
 }

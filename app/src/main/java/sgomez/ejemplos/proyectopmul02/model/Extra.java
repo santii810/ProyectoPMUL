@@ -3,6 +3,8 @@ package sgomez.ejemplos.proyectopmul02.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import sgomez.ejemplos.proyectopmul02.MainActivity;
+
 /**
  * Created by sgomez on 28/11/2015.
  */
@@ -11,18 +13,22 @@ public class Extra {
     private String idUsuario;
     private Date fechaExtra;
     private String momentoDia;
-    private Local Local;
+    private Local local;
     private int cobrado;
     private double propina;
     private double pagoAsociado;
-    private Festividad festividad;
+    private String festividad;
     private Cocina cocina;
     private String notas;
     private double duracion;
     private ArrayList<Camarero> camareros;
 
     public void setLocal(Local local) {
-        Local = local;
+        this.local = local;
+    }
+
+    public void setLocal(String idLocal) {
+        this.local = MainActivity.getLocalRepository().getLocal(idLocal);
     }
 
     public ArrayList<Camarero> getCamareros() {
@@ -70,16 +76,16 @@ public class Extra {
     }
 
     public Local getLocal() {
-        return Local;
+        return local;
     }
 
     public void setIdLocal(String idLocal) {
         //falta buscar todos los datos en tabla local
-        this.Local = new Local(idLocal);
+        this.local = new Local(idLocal);
     }
 
     public void setIdLocal(Local idLocal) {
-        this.Local = idLocal;
+        this.local = idLocal;
     }
 
     public int getCobrado() {
@@ -98,16 +104,12 @@ public class Extra {
         this.propina = propina;
     }
 
-    public Festividad getFestividad() {
+    public String getFestividad() {
         return festividad;
     }
 
-    public void setFestividad(Festividad festividad) {
+    public void setFestividad(String festividad) {
         this.festividad = festividad;
-    }
-
-    public void setFestividad(String idFestividad) {
-        this.festividad = new Festividad(idFestividad);
     }
 
     public double getPagoAsociado() {
@@ -127,7 +129,7 @@ public class Extra {
     }
 
     public void setCocina(String idCocina) {
-        this.cocina = new Cocina(idCocina);
+        this.cocina = MainActivity.getCocinaRepository().getCocina(idCocina);
     }
 
     public String getNotas() {
@@ -148,5 +150,24 @@ public class Extra {
 
     public Extra() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Extra{" +
+                "idExtra='" + idExtra + '\'' +
+                ", idUsuario='" + idUsuario + '\'' +
+                ", fechaExtra=" + fechaExtra +
+                ", momentoDia='" + momentoDia + '\'' +
+                ", Local=" + local +
+                ", cobrado=" + cobrado +
+                ", propina=" + propina +
+                ", pagoAsociado=" + pagoAsociado +
+                ", festividad='" + festividad + '\'' +
+                ", cocina=" + cocina +
+                ", notas='" + notas + '\'' +
+                ", duracion=" + duracion +
+                ", camareros=" + camareros +
+                '}';
     }
 }

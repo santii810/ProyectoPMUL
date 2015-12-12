@@ -34,8 +34,6 @@
             android:layout_height="wrap_content"
             android:onClick="buttonViewDataOnClick"
             android:text="@string/viewData" />
-
-
     </LinearLayout>
 
 </RelativeLayout>

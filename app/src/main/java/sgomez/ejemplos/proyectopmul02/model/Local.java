@@ -52,4 +52,10 @@ public class Local {
     public void setIdLocal(String idLocal) {
         this.idLocal = idLocal;
     }
+
+
+    @Override
+    public String toString() {
+        return nombre ;
+    }
 }

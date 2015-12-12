@@ -7,53 +7,53 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="sgomez.ejemplos.proyectopmul02.AddCamareroActivity">
+    tools:context="sgomez.ejemplos.proyectopmul02.AddExtra3Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/camareroName" />
+            android:text="@string/cocina" />
 
-        <EditText
-            android:id="@+id/editTextCamareroName"
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <ToggleButton
-            android:id="@+id/toggleButtonCamarero"
-            android:layout_width="wrap_content"
-            android:checked="true"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="20dp"
-            android:textOff="@string/unactive"
-            android:textOn="@string/active" />
+            android:text="@string/festividad" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonAddCamarero"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="buttonAddCamareroOnClick"
-                android:text="@string/addCamarero" />
+                android:text="@string/finalizar" />
 
             <Button
-                android:id="@+id/buttonAddCamareroCancel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/cancel" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text=">>" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
