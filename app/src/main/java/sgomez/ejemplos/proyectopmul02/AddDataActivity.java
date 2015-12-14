@@ -77,6 +77,7 @@ public class AddDataActivity extends AppCompatActivity {
                     extra.setDuracion(data.getDoubleExtra("duracon", 0));
                     extra.setPropina(data.getDoubleExtra("propina", 0));
                     extra.setNotas(data.getStringExtra("notas"));
+                    extra.setPagoAsociado(data.getDoubleExtra("pagoAsociado",0));
                     if (resultCode == RESULT_OK) {
                         Intent intent = new Intent(this, AddExtra3Activity.class);
                         startActivityForResult(intent, ADDEXTRA3_REQUEST_CODE);
@@ -90,7 +91,6 @@ public class AddDataActivity extends AppCompatActivity {
                     extra.setCocina(data.getStringExtra("cocina"));
                     extra.setFestividad(data.getStringExtra("festividad"));
                     extra.setMomentoDia(data.getStringExtra("momentoDia"));
-
                     if (resultCode == RESULT_OK) {
                         String id = MainActivity.getExtraRepository().addExtraCamarero(extra);
                         Intent intent = new Intent(this, AddExtra4Activity.class);

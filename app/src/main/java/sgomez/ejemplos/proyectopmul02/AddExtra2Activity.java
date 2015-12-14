@@ -56,17 +56,19 @@ public class AddExtra2Activity extends AppCompatActivity {
     private void backData(int result) {
         Intent backData = new Intent();
         try {
-
+            backData.putExtra("pagoAsociado", ((PagoAsoc) pagoAsociado.getSelectedItem()).getCantidad());
+        } catch (Exception e) {        }
+        try {
             backData.putExtra("cobrado", Integer.parseInt(cobrado.getText().toString()));
+        } catch (Exception e) {        }
+        try {
             backData.putExtra("duracion", Double.parseDouble(duracion.getText().toString()));
+        } catch (Exception e) {        }
+        try {
             backData.putExtra("propina", Double.parseDouble(propina.getText().toString()));
-            
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {        }
         backData.putExtra("notas", notas.getText().toString());
         setResult(result, backData);
         finish();
     }
-
-
 }
