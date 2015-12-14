@@ -4,9 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import sgomez.ejemplos.proyectopmul02.model.PagoAsoc;
 
 public class AddExtra2Activity extends AppCompatActivity {
     EditText cobrado;
@@ -31,10 +36,13 @@ public class AddExtra2Activity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        ArrayList<PagoAsoc> pagos = new ArrayList<>();
+        pagos.add(new PagoAsoc("Extra", 5.0));
+        pagos.add(new PagoAsoc("Media", 2.5));
+        pagos.add(new PagoAsoc("Nada", 0.0));
 
-        // rellenar spinner pago asociado
-
-
+        ArrayAdapter<String> adapterPago = new ArrayAdapter(this, android.R.layout.simple_spinner_item, pagos);
+        pagoAsociado.setAdapter(adapterPago);
     }
 
     public void buttonAddExtra2FinalizarOnClick(View view) {
@@ -49,10 +57,10 @@ public class AddExtra2Activity extends AppCompatActivity {
         Intent backData = new Intent();
         try {
 
-
             backData.putExtra("cobrado", Integer.parseInt(cobrado.getText().toString()));
             backData.putExtra("duracion", Double.parseDouble(duracion.getText().toString()));
             backData.putExtra("propina", Double.parseDouble(propina.getText().toString()));
+            
         } catch (Exception e) {
         }
         backData.putExtra("notas", notas.getText().toString());

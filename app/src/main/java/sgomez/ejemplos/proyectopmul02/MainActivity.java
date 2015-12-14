@@ -3,14 +3,17 @@ package sgomez.ejemplos.proyectopmul02;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.parse.Parse;
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private static LocalRepository localRepository;
     private static ExtraRepository extraRepository;
     private static Usuario user;
+    private static Profile profile;
 
     private TextView info;
     private LoginButton loginButton;
@@ -42,10 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-
         user = new Usuario("485094501692517");
-
-
 
 
         //Iniciar Parse
@@ -70,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 user = new Usuario(loginResult.getAccessToken().getUserId());
                 info.setText(loginResult.getAccessToken().getUserId() + " " + user.getId());
+
+                AccessToken accessToken = loginResult.getAccessToken();
+                profile = Profile.getCurrentProfile();
+
+
             }
 
 

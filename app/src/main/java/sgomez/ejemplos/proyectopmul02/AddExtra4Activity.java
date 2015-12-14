@@ -44,7 +44,7 @@ public class AddExtra4Activity extends AppCompatActivity {
                             camarerosListView.setItemChecked(position, true);
                             view.setBackgroundColor(Color.GREEN);
                         }
-                        if (camarerosPresentes.contains(camareros.get(position))) {
+                        if (!camarerosPresentes.contains(camareros.get(position))) {
                             camarerosPresentes.add(camareros.get(position));
                             textViewContadorCamareros.setText(Integer.toString(++cont));
                         }

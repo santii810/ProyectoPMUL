@@ -6,7 +6,7 @@ package sgomez.ejemplos.proyectopmul02.model;
 public class Cocina {
     private String idCocina;
     private String nombre;
-    boolean activo;
+    private boolean activo;
 
 
     public Cocina(String nombre, boolean activo) {
@@ -32,10 +32,6 @@ public class Cocina {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Cocina(String idCocina) {
-        this.idCocina = idCocina;
     }
 
     public String getIdCocina() {

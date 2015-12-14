@@ -81,7 +81,7 @@ public class Extra {
 
     public void setIdLocal(String idLocal) {
         //falta buscar todos los datos en tabla local
-        this.local = new Local(idLocal);
+        this.local = MainActivity.getLocalRepository().getLocal(idLocal);
     }
 
     public void setIdLocal(Local idLocal) {
