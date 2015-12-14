@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import java.util.ArrayList;
+
 import sgomez.ejemplos.proyectopmul02.model.Local;
-import sgomez.ejemplos.proyectopmul02.model.adapters.localAdapter;
+import sgomez.ejemplos.proyectopmul02.model.adapters.LocalAdapter;
 
 public class ViewLocalesActivity extends AppCompatActivity {
     private ListView localesListView;
@@ -22,7 +24,7 @@ public class ViewLocalesActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_view_locales);
         localesListView = new ListView(this);
-        localesListView = (ListView) findViewById(R.id.listViewLocales);
+        localesListView = (ListView) findViewById(R.id.listViewViewLocales);
         localesListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
@@ -40,7 +42,7 @@ public class ViewLocalesActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         locales = MainActivity.getLocalRepository().getLocales();
-        localesListView.setAdapter(new localAdapter(this, R.layout.view_item_subitem, locales));
+        localesListView.setAdapter(new LocalAdapter(this, R.layout.view_item_subitem, locales));
         super.onResume();
     }
 

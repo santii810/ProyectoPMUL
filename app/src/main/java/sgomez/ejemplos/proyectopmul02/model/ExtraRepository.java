@@ -10,7 +10,11 @@ public interface ExtraRepository {
 
     void addExtra(Extra extra);
 
+    String addExtraCamarero(Extra extra);
+
     void deleteExtra(String extraId);
 
     Extra getExtra(String extraId);
+
+    void addCamareros(ArrayList<Camarero> camareros,String idExtra);
 }

@@ -20,6 +20,7 @@
             android:text="@string/localName" />
 
         <EditText
+            android:id="@+id/editTextDetallesNombreLocal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:editable="false" />
@@ -30,6 +31,7 @@
             android:text="@string/localAddress" />
 
         <EditText
+            android:id="@+id/editTextDetallesDireccionLocal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:editable="false" />

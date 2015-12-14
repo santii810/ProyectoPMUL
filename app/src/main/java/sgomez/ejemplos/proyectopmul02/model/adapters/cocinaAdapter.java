@@ -15,13 +15,13 @@ import sgomez.ejemplos.proyectopmul02.model.Cocina;
 /**
  * Created by dam209 on 03/12/2015.
  */
-public class cocinaAdapter extends BaseAdapter {
+public class CocinaAdapter extends BaseAdapter {
 
     private ArrayList<Cocina> entradas;
     private int idView;
     private Context contexto;
 
-    public cocinaAdapter(Context context, int IdView, ArrayList<Cocina> entradas) {
+    public CocinaAdapter(Context context, int IdView, ArrayList<Cocina> entradas) {
         super();
         this.contexto = context;
         this.entradas = entradas;

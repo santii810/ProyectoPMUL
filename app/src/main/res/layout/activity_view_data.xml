@@ -13,7 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
+        <Button
+            android:id="@+id/viewExtras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonViewExtrasOnClick"
+            android:text="@string/viewExtras" />
         <Button
             android:id="@+id/viewLocales"
             android:layout_width="match_parent"

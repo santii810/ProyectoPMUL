@@ -97,9 +97,11 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:onClick="buttonAddExtra2NextOnClick"
                     android:layout_weight="1"
-                    android:text=">>" />
+                    android:background="@color/colorPrimary"
+                    android:onClick="buttonAddExtra2NextOnClick"
+                    android:text=">>"
+                    android:textColor="#ffffff" />
             </LinearLayout>
         </LinearLayout>
 

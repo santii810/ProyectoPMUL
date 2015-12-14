@@ -21,6 +21,7 @@
 
         <Spinner
             android:layout_width="match_parent"
+            android:id="@+id/spinnerCocina"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -30,7 +31,30 @@
 
         <Spinner
             android:layout_width="match_parent"
+            android:id="@+id/spinnerFestividad"
             android:layout_height="wrap_content" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonDia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dia" />
+
+            <RadioButton
+                android:id="@+id/radioButtonNoche"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/noche" />
+        </RadioGroup>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,22 +62,23 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/buttonAddExtra3Finalizar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="buttonAddExtra3FinalizarOnClick"
                 android:text="@string/finalizar" />
 
             <Button
+                android:id="@+id/buttonAddExtra3Next"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/cancel" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:textColor="#ffffff"
+                android:onClick="buttonAddExtra3NextOnClick"
                 android:text=">>" />
         </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>

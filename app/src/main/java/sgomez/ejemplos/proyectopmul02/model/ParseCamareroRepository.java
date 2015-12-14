@@ -1,8 +1,5 @@
 package sgomez.ejemplos.proyectopmul02.model;
 
-import android.content.Context;
-
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -21,6 +18,8 @@ public class ParseCamareroRepository implements CamareroRepository {
     private final String TABLEID = "objectId";
     private final String TABLENOMBRE = "nombreCamarero";
     private final String TABLEACTIVO = "activo";
+    private final String TABLEINSERCION = "insertadoPor";
+
 
 
     public ParseCamareroRepository() {
@@ -47,6 +46,8 @@ public class ParseCamareroRepository implements CamareroRepository {
         ParseObject parseCamarero = new ParseObject(DBNAME);
         parseCamarero.put(TABLENOMBRE, camarero.getNombre());
         parseCamarero.put(TABLEACTIVO, camarero.isActivo());
+        parseCamarero.put(TABLEINSERCION, MainActivity.getUser().getId());
+
         parseCamarero.saveInBackground();
     }
 
@@ -75,7 +76,7 @@ public class ParseCamareroRepository implements CamareroRepository {
             List<ParseObject> result = query.find();
 
             if (result.size() > 0) {
-                rellenaCamarero(result.get(0));
+                camarero = rellenaCamarero(result.get(0));
             }
         } catch (ParseException e) {
             e.printStackTrace();

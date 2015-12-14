@@ -15,13 +15,13 @@ import sgomez.ejemplos.proyectopmul02.model.Local;
 /**
  * Created by dam209 on 03/12/2015.
  */
-public class localAdapter extends BaseAdapter {
+public class LocalAdapter extends BaseAdapter {
 
     private ArrayList<Local> entradas;
     private int idView;
     private Context contexto;
 
-    public localAdapter(Context context, int IdView, ArrayList<Local> entradas) {
+    public LocalAdapter(Context context, int IdView, ArrayList<Local> entradas) {
         super();
         this.contexto = context;
         this.entradas = entradas;

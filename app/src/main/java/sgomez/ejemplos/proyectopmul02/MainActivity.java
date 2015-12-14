@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -23,21 +24,29 @@ import sgomez.ejemplos.proyectopmul02.model.ParseCamareroRepository;
 import sgomez.ejemplos.proyectopmul02.model.ParseCocinaRepository;
 import sgomez.ejemplos.proyectopmul02.model.ParseExtraRepository;
 import sgomez.ejemplos.proyectopmul02.model.ParseLocalRepository;
+import sgomez.ejemplos.proyectopmul02.model.Usuario;
 
 public class MainActivity extends AppCompatActivity {
     private static CamareroRepository camareroRepository;
     private static CocinaRepository cocinaRepository;
     private static LocalRepository localRepository;
     private static ExtraRepository extraRepository;
+    private static Usuario user;
 
     private TextView info;
     private LoginButton loginButton;
     private CallbackManager callbackManager;
-    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        user = new Usuario("485094501692517");
+
+
+
 
         //Iniciar Parse
         Parse.initialize(this, getResources().getString(R.string.parseId), getResources().getString(R.string.parseKey));
@@ -59,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                userId = loginResult.getAccessToken().getUserId();
+                user = new Usuario(loginResult.getAccessToken().getUserId());
+                info.setText(loginResult.getAccessToken().getUserId() + " " + user.getId());
             }
+
 
             @Override
             public void onCancel() {
@@ -80,13 +91,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonAddDataOnClick(View view) {
-        Intent intent = new Intent(this, AddDataActivity.class);
-        startActivity(intent);
+        try {
+            //intento obtener el id del usuario
+            String a = user.getId();
+
+            Intent intent = new Intent(this, AddDataActivity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            Toast.makeText(this, "Debes iniciar sesion", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void buttonViewDataOnClick(View view) {
-        Intent intent = new Intent(this, ViewDataActivity.class);
-        startActivity(intent);
+        try {
+            //intento obtener el id del usuario
+            String a = user.getId();
+
+            Intent intent = new Intent(this, ViewDataActivity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            Toast.makeText(this, "Debes iniciar sesion", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public static CamareroRepository getCamareroRepository() {
@@ -105,5 +131,10 @@ public class MainActivity extends AppCompatActivity {
         return extraRepository;
     }
 
+    public static Usuario getUser() {
+        return user;
+    }
 
+    public void buttonPerfilOnClick(View view) {
+    }
 }

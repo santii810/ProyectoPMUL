@@ -18,7 +18,7 @@ public class AddDataActivity extends AppCompatActivity {
     public final static int ADDEXTRA1_REQUEST_CODE = 1;
     public final static int ADDEXTRA2_REQUEST_CODE = 2;
     public final static int ADDEXTRA3_REQUEST_CODE = 3;
-    public final static int ADDEXTRA4_REQUEST_CODE = 4;
+
     public final static int ADDLOCAL_REQUEST_CODE = 5;
     public final static int ADDCAMARERO_REQUEST_CODE = 6;
     public final static int ADDCOCINA_REQUEST_CODE = 7;
@@ -63,9 +63,9 @@ public class AddDataActivity extends AppCompatActivity {
         switch (requestCode) {
             case ADDEXTRA1_REQUEST_CODE:
                 if (resultCode == RESULT_OK) {
-//                    extra.setLocal(MainActivity.getLocalRepository().getLocal(data.getStringExtra("idLocal")));
+                   extra.setLocal(MainActivity.getLocalRepository().getLocal(data.getStringExtra("idLocal")));
                     extra.setFechaExtra(new Date(data.getIntExtra("año", 0), data.getIntExtra("mes", 0), data.getIntExtra("dia", 0)));
-                    Log.e("DATOS_EXTRA", extra.getFechaExtra().toString() /*+ " _ " + extra.getLocal().getNombre()*/);
+                    Log.e("DATOS_EXTRA", extra.getFechaExtra().toString() + " _ " + extra.getLocal().getNombre());
 
                     Intent intent = new Intent(this, AddExtra2Activity.class);
                     startActivityForResult(intent, ADDEXTRA2_REQUEST_CODE);
@@ -85,6 +85,23 @@ public class AddDataActivity extends AppCompatActivity {
                     }
                 }
                 break;
+            case ADDEXTRA3_REQUEST_CODE:
+                if (resultCode == RESULT_OK || resultCode == RESULT_FINISH) {
+                    extra.setCocina(data.getStringExtra("cocina"));
+                    extra.setFestividad(data.getStringExtra("festividad"));
+                    extra.setMomentoDia(data.getStringExtra("momentoDia"));
+
+                    if (resultCode == RESULT_OK) {
+                        String id = MainActivity.getExtraRepository().addExtraCamarero(extra);
+                        Intent intent = new Intent(this, AddExtra4Activity.class);
+                        intent.putExtra("id", id);
+                        startActivity(intent);
+                    } else if (resultCode == RESULT_FINISH) {
+                        MainActivity.getExtraRepository().addExtra(extra);
+                    }
+                }
+                break;
+
             case ADDLOCAL_REQUEST_CODE:
                 if (resultCode == RESULT_OK) {
                     String nombreLocal = data.getStringExtra("nombreLocal");

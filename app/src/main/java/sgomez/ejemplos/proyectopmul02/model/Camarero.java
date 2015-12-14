@@ -40,4 +40,9 @@ public class Camarero {
     public Camarero() {
 
     }
+
+    @Override
+    public String toString() {
+        return Nombre ;
+    }
 }

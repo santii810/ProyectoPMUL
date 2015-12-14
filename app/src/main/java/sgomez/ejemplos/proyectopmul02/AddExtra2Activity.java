@@ -48,15 +48,16 @@ public class AddExtra2Activity extends AppCompatActivity {
     private void backData(int result) {
         Intent backData = new Intent();
         try {
+
+
             backData.putExtra("cobrado", Integer.parseInt(cobrado.getText().toString()));
             backData.putExtra("duracion", Double.parseDouble(duracion.getText().toString()));
             backData.putExtra("propina", Double.parseDouble(propina.getText().toString()));
-            backData.putExtra("notas", notas.getText().toString());
-            setResult(result, backData);
-            finish();
         } catch (Exception e) {
-            Toast.makeText(this, "Los datos introducidos son incorrectos", Toast.LENGTH_LONG).show();
         }
+        backData.putExtra("notas", notas.getText().toString());
+        setResult(result, backData);
+        finish();
     }
 
 

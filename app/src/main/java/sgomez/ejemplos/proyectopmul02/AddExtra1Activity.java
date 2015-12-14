@@ -23,22 +23,20 @@ public class AddExtra1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_add_extra1);
         spinnerLocales = ((Spinner) findViewById(R.id.spinnerLocales));
         datePicker = (DatePicker) findViewById(R.id.addExtraDatePicker);
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
         ArrayList<Local> locales = MainActivity.getLocalRepository().getLocales();
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, locales);
-
+        spinnerLocales.setAdapter(adapter);
     }
 
     public void buttonAddExtra1NextOnClick(View view) {
         Intent backData = new Intent();
-//        backData.putExtra("idLocal", ((Local) spinnerLocales.getSelectedItem()).getIdLocal());
-        backData.putExtra("año", datePicker.getYear()-1900);
+        backData.putExtra("idLocal", ((Local) spinnerLocales.getSelectedItem()).getIdLocal());
+        backData.putExtra("año", datePicker.getYear() - 1900);
         backData.putExtra("mes", datePicker.getMonth());
         backData.putExtra("dia", datePicker.getDayOfMonth());
         setResult(Activity.RESULT_OK, backData);

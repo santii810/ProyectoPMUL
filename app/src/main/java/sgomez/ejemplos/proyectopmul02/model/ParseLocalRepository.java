@@ -1,8 +1,6 @@
 package sgomez.ejemplos.proyectopmul02.model;
 
-import android.content.Context;
 
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -11,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sgomez.ejemplos.proyectopmul02.MainActivity;
-import sgomez.ejemplos.proyectopmul02.R;
 
 
 public class ParseLocalRepository implements LocalRepository {
@@ -19,11 +16,9 @@ public class ParseLocalRepository implements LocalRepository {
     private final String TABLEID = "objectId";
     private final String TABLENOMBRE = "nombreLocal";
     private final String TABLEDIRECCION = "direccionLocal";
+    private final String TABLEINSERCION = "insertadoPor";
 
-    public ParseLocalRepository() {
-
-
-    }
+    public ParseLocalRepository() {}
 
     @Override
     public ArrayList<Local> getLocales() {
@@ -55,6 +50,8 @@ public class ParseLocalRepository implements LocalRepository {
         ParseObject parseLocal = new ParseObject(DBNAME);
         parseLocal.put(TABLENOMBRE, local.getNombre());
         parseLocal.put(TABLEDIRECCION, local.getDireccion());
+        parseLocal.put(TABLEINSERCION, MainActivity.getUser().getId());
+
         parseLocal.saveInBackground();
     }
 
@@ -82,7 +79,7 @@ public class ParseLocalRepository implements LocalRepository {
             List<ParseObject> result = query.find();
 
             if (result.size() > 0) {
-                rellenaLocal(result.get(0));
+                local = rellenaLocal(result.get(0));
             }
         } catch (ParseException e) {
             e.printStackTrace();

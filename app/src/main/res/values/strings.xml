@@ -29,5 +29,10 @@
     <string name="cocina">Cocina</string>
     <string name="festividad">Festividad</string>
     <string name="facebook_app_id">1746225058938823</string>
+    <string name="dia">Dia</string>
+    <string name="noche">Noche</string>
+    <string name="camareros">Camareros</string>
+    <string name="zero">0</string>
+    <string name="viewExtras">Ver extras</string>
 
 </resources>

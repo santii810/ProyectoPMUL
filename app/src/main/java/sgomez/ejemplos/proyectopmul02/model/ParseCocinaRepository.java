@@ -1,14 +1,13 @@
 package sgomez.ejemplos.proyectopmul02.model;
 
-import android.content.Context;
-
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import sgomez.ejemplos.proyectopmul02.MainActivity;
 
 /**
  * Created by dam209 on 01/12/2015.
@@ -19,6 +18,7 @@ public class ParseCocinaRepository implements CocinaRepository {
     private final String TABLEID = "objectId";
     private final String TABLENOMBRE = "nombreCocina";
     private final String TABLEACTIVO = "activo";
+    private final String TABLEINSERCION = "insertadoPor";
 
 
     public ParseCocinaRepository() {
@@ -45,6 +45,7 @@ public class ParseCocinaRepository implements CocinaRepository {
         ParseObject parseCocina = new ParseObject(DBNAME);
         parseCocina.put(TABLENOMBRE, cocina.getNombre());
         parseCocina.put(TABLEACTIVO, cocina.isActivo());
+        parseCocina.put(TABLEINSERCION, MainActivity.getUser().getId());
         parseCocina.saveInBackground();
     }
 
@@ -73,7 +74,7 @@ public class ParseCocinaRepository implements CocinaRepository {
             List<ParseObject> result = query.find();
 
             if (result.size() > 0) {
-                rellenaCocina(result.get(0));
+                cocina = rellenaCocina(result.get(0));
             }
         } catch (ParseException e) {
             e.printStackTrace();

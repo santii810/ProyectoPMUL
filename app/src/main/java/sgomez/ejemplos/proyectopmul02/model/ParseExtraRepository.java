@@ -1,13 +1,13 @@
 package sgomez.ejemplos.proyectopmul02.model;
 
-import android.widget.Toast;
-
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import sgomez.ejemplos.proyectopmul02.MainActivity;
 
 /**
  * Created by dam209 on 01/12/2015.
@@ -49,9 +49,9 @@ public class ParseExtraRepository implements ExtraRepository {
     }
 
     @Override
-    public void addExtra(Extra extra) {
+    public String addExtraCamarero(Extra extra) {
         ParseObject parseLocal = new ParseObject(DBNAME);
-//        parseLocal.put(TABLE_ID_USUARIO, extra.getIdUsuario());
+        parseLocal.put(TABLE_ID_USUARIO, MainActivity.getUser().getId());
         parseLocal.put(TABLE_COBRADO, extra.getCobrado());
         parseLocal.put(TABLE_DURACION, extra.getDuracion());
         parseLocal.put(TABLE_PAGO_ASOCIADO, extra.getPagoAsociado());
@@ -66,9 +66,37 @@ public class ParseExtraRepository implements ExtraRepository {
 
         try {
             parseLocal.save();
+            return parseLocal.getObjectId();
         } catch (ParseException e) {
             e.printStackTrace();
+            return null;
+        }
+    }
 
+    @Override
+    public void addExtra(Extra extra) {
+        ParseObject parseLocal = new ParseObject(DBNAME);
+        parseLocal.put(TABLE_ID_USUARIO, MainActivity.getUser().getId());
+        parseLocal.put(TABLE_COBRADO, extra.getCobrado());
+        parseLocal.put(TABLE_DURACION, extra.getDuracion());
+        parseLocal.put(TABLE_PAGO_ASOCIADO, extra.getPagoAsociado());
+        parseLocal.put(TABLE_FECHA, extra.getFechaExtra());
+        parseLocal.put(TABLE_PROPINA, extra.getPropina());
+        parseLocal.put(TABLE_ID_LOCAL, extra.getLocal().getIdLocal());
+        try {
+            parseLocal.put(TABLE_FESTIVIDAD, extra.getFestividad());
+            parseLocal.put(TABLE_MOMENTO_DIA, extra.getMomentoDia());
+            parseLocal.put(TABLE_ID_COCINA, extra.getCocina().getIdCocina());
+        } catch (Exception e) {
+//si o usuario finaliza antes de chegar a addExtraActicity3 non tera estes datos
+        }
+        parseLocal.put(TABLE_NOTAS, extra.getNotas());
+
+
+        try {
+            parseLocal.save();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 
@@ -80,6 +108,22 @@ public class ParseExtraRepository implements ExtraRepository {
     @Override
     public Extra getExtra(String extraId) {
         return null;
+    }
+
+    @Override
+    public void addCamareros(ArrayList<Camarero> camareros, String idExtra) {
+        String idUsuario = MainActivity.getUser().getId();
+        for (Camarero item : camareros) {
+            addCamareroLista(item.getIdCamarero(), idExtra, idUsuario);
+        }
+    }
+
+    private void addCamareroLista(String idCamarero, String idExtra, String idUsuario) {
+        ParseObject parseLocal = new ParseObject("ListaCamareros");
+        parseLocal.put("camareroId", idCamarero);
+        parseLocal.put("ExtraId", idExtra);
+        parseLocal.put("UsuarioId", idUsuario);
+        parseLocal.saveInBackground();
     }
 
     private Extra rellenaExtra(ParseObject result) {
@@ -95,7 +139,6 @@ public class ParseExtraRepository implements ExtraRepository {
         extra.setIdLocal(result.getString(TABLE_ID_LOCAL));
         extra.setMomentoDia(result.getString(TABLE_MOMENTO_DIA));
         extra.setPagoAsociado(result.getDouble(TABLE_PAGO_ASOCIADO));
-
         return extra;
     }
 }

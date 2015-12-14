@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import sgomez.ejemplos.proyectopmul02.model.Camarero;
-import sgomez.ejemplos.proyectopmul02.model.adapters.camareroAdapter;
+import sgomez.ejemplos.proyectopmul02.model.adapters.CamareroAdapter;
 
 public class ViewCamarerosActivity extends AppCompatActivity {
     private ListView camarerosListView;
@@ -20,11 +20,8 @@ public class ViewCamarerosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_camareros);
 
-
-
-        setContentView(R.layout.activity_view_camareros);
         camarerosListView = new ListView(this);
-        camarerosListView = (ListView) findViewById(R.id.listViewCamareros);
+        camarerosListView = (ListView) findViewById(R.id.listViewViewCamareros);
         camarerosListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
@@ -42,7 +39,7 @@ public class ViewCamarerosActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         camareros = MainActivity.getCamareroRepository().getCamareros();
-        camarerosListView.setAdapter(new camareroAdapter(this, R.layout.view_item_subitem, camareros));
+        camarerosListView.setAdapter(new CamareroAdapter(this, R.layout.view_item_subitem, camareros));
         super.onResume();
     }
     }

@@ -45,4 +45,9 @@ public class Cocina {
     public void setIdCocina(String idCocina) {
         this.idCocina = idCocina;
     }
+
+    @Override
+    public String toString() {
+        return  nombre;
+    }
 }

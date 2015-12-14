@@ -10,7 +10,7 @@
     tools:context="sgomez.ejemplos.proyectopmul02.ViewCamarerosActivity">
 
     <ListView
-        android:id="@+id/listViewCamareros"
+        android:id="@+id/listViewViewCamareros"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

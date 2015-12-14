@@ -7,21 +7,26 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import sgomez.ejemplos.proyectopmul02.R;
-import sgomez.ejemplos.proyectopmul02.model.Camarero;
+import sgomez.ejemplos.proyectopmul02.model.Extra;
 
 /**
  * Created by dam209 on 03/12/2015.
+ * <p/>
+ * <p/>
+ * adaptador de lista de locales
  */
-public class CamareroAdapter extends BaseAdapter {
+public class ExtraAdapter extends BaseAdapter {
 
-    private ArrayList<Camarero> entradas;
+    private ArrayList<Extra> entradas;
     private int idView;
     private Context contexto;
 
-    public CamareroAdapter(Context context, int IdView, ArrayList<Camarero> entradas) {
+    public ExtraAdapter(Context context, int IdView, ArrayList<Extra> entradas) {
         super();
         this.contexto = context;
         this.entradas = entradas;
@@ -53,14 +58,15 @@ public class CamareroAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void onEntrada(Camarero entrada, View view) {
+    public void onEntrada(Extra entrada, View view) {
         TextView titulo = (TextView) view.findViewById(R.id.viewItem);
-        titulo.setText(entrada.getNombre());
+        titulo.setText(formatearFecha(entrada.getFechaExtra()));
         TextView subTitulo = (TextView) view.findViewById(R.id.viewSubItem);
-        if (entrada.isActivo()) {
-            subTitulo.setText("Activo");
-        } else {
-            subTitulo.setText("Inactivo");
-        }
+        subTitulo.setText(entrada.getLocal().getNombre());
+    }
+
+    private String formatearFecha(Date fecha) {
+        SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
+        return formateador.format(fecha);
     }
 }

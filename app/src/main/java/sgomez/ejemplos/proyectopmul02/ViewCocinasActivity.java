@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import sgomez.ejemplos.proyectopmul02.model.Cocina;
-import sgomez.ejemplos.proyectopmul02.model.adapters.cocinaAdapter;
+import sgomez.ejemplos.proyectopmul02.model.adapters.CocinaAdapter;
 
 public class ViewCocinasActivity extends AppCompatActivity {
     private ListView cocinasListView;
@@ -43,7 +43,7 @@ public class ViewCocinasActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         cocinas = MainActivity.getCocinaRepository().getCocinas();
-        cocinasListView.setAdapter(new cocinaAdapter(this, R.layout.view_item_subitem, cocinas));
+        cocinasListView.setAdapter(new CocinaAdapter(this, R.layout.view_item_subitem, cocinas));
         super.onResume();
     
     }
