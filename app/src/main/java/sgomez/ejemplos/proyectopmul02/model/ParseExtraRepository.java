@@ -30,13 +30,13 @@ public class ParseExtraRepository implements ExtraRepository {
 
 
     public ParseExtraRepository() {
-
     }
 
     @Override
     public ArrayList<Extra> getExtras() {
         ArrayList<Extra> extras = new ArrayList<>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.whereEqualTo(TABLE_ID_USUARIO, MainActivity.getUser().getId());
         try {
             List<ParseObject> result = query.find();
             for (ParseObject object : result) {
@@ -57,11 +57,21 @@ public class ParseExtraRepository implements ExtraRepository {
         parseLocal.put(TABLE_PAGO_ASOCIADO, extra.getPagoAsociado());
         parseLocal.put(TABLE_FECHA, extra.getFechaExtra());
         parseLocal.put(TABLE_PROPINA, extra.getPropina());
-//        parseLocal.put(TABLE_ID_LOCAL, extra.getLocal());
-//        parseLocal.put(TABLE_FESTIVIDAD, extra.getFestividad());
-//        parseLocal.put(TABLE_ID_COCINA, extra.getCocina());
+        parseLocal.put(TABLE_ID_LOCAL, extra.getLocal().getIdLocal());
+//si o usuario finaliza antes de chegar a addExtraActicity3 non tera estes datos
         parseLocal.put(TABLE_NOTAS, extra.getNotas());
-//        parseLocal.put(TABLE_MOMENTO_DIA, extra.getMomentoDia());
+        try {
+            parseLocal.put(TABLE_ID_COCINA, extra.getCocina().getIdCocina());
+        } catch (Exception e) {
+        }
+        try {
+            parseLocal.put(TABLE_MOMENTO_DIA, extra.getMomentoDia());
+        } catch (Exception e) {
+        }
+        try {
+            parseLocal.put(TABLE_FESTIVIDAD, extra.getFestividad());
+        } catch (Exception e) {
+        }
 
 
         try {
@@ -83,16 +93,20 @@ public class ParseExtraRepository implements ExtraRepository {
         parseLocal.put(TABLE_FECHA, extra.getFechaExtra());
         parseLocal.put(TABLE_PROPINA, extra.getPropina());
         parseLocal.put(TABLE_ID_LOCAL, extra.getLocal().getIdLocal());
+//si o usuario finaliza antes de chegar a addExtraActicity3 non tera estes datos
+        parseLocal.put(TABLE_NOTAS, extra.getNotas());
         try {
-            parseLocal.put(TABLE_FESTIVIDAD, extra.getFestividad());
-            parseLocal.put(TABLE_MOMENTO_DIA, extra.getMomentoDia());
             parseLocal.put(TABLE_ID_COCINA, extra.getCocina().getIdCocina());
         } catch (Exception e) {
-//si o usuario finaliza antes de chegar a addExtraActicity3 non tera estes datos
         }
-        parseLocal.put(TABLE_NOTAS, extra.getNotas());
-
-
+        try {
+            parseLocal.put(TABLE_MOMENTO_DIA, extra.getMomentoDia());
+        } catch (Exception e) {
+        }
+        try {
+            parseLocal.put(TABLE_FESTIVIDAD, extra.getFestividad());
+        } catch (Exception e) {
+        }
         try {
             parseLocal.save();
         } catch (ParseException e) {

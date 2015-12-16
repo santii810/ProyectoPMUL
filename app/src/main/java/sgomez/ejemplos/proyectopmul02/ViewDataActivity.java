@@ -1,12 +1,9 @@
 package sgomez.ejemplos.proyectopmul02;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-
-import sgomez.ejemplos.proyectopmul02.model.Local;
 
 public class ViewDataActivity extends AppCompatActivity {
 

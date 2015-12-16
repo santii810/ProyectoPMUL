@@ -18,28 +18,62 @@
             android:id="@+id/addExtra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#a91b1b"
             android:onClick="buttonAddExtraOnClick"
-            android:text="@string/addExtra" />
+            android:text="@string/addExtra"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            />
 
         <Button
             android:id="@+id/addLocal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#e7d938"
             android:onClick="butttonAddLocalOnClick"
-            android:text="@string/addLocal" />
+            android:text="@string/addLocal"
+            android:textSize="30dp" />
 
         <Button
             android:id="@+id/addCamarero"
             android:layout_width="match_parent"
-            android:onClick="buttonAddCamareroOnClick"
             android:layout_height="wrap_content"
-            android:text="@string/addCamarero" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#047a17"
+            android:onClick="buttonAddCamareroOnClick"
+            android:text="@string/addCamarero"
+            android:textColor="#ffffff"
+            android:textSize="30dp" />
 
         <Button
             android:id="@+id/addCocina"
-            android:onClick="buttonAddCocinaOnClick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/addCocina" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#2835a8"
+            android:onClick="buttonAddCocinaOnClick"
+            android:text="@string/addCocina"
+            android:textColor="#ffffff"
+            android:textSize="30dp" />
+
+
     </LinearLayout>
 </RelativeLayout>

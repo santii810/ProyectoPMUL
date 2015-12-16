@@ -7,7 +7,10 @@ import java.util.ArrayList;
  */
 public interface NoteRepository {
     public ArrayList<Note> getNotes();
+
     public void addNote(Note note);
+
     public void deleteNote(String noteId);
+
     public Note getNote(String noteId);
 }

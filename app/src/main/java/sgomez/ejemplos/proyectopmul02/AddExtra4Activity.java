@@ -2,13 +2,14 @@ package sgomez.ejemplos.proyectopmul02;
 
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -62,6 +63,7 @@ public class AddExtra4Activity extends AppCompatActivity {
     public void buttonAddExtra4FinalizarOnClick(View view) {
         String id = getIntent().getStringExtra("id");
         MainActivity.getExtraRepository().addCamareros(camarerosPresentes, id);
+        Toast.makeText(this, "Extra añadida correctamente", Toast.LENGTH_SHORT).show();
         finish();
     }
 }

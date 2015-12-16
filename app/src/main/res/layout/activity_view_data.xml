@@ -13,32 +13,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/viewExtras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#a91b1b"
             android:onClick="buttonViewExtrasOnClick"
-            android:text="@string/viewExtras" />
+            android:text="@string/viewExtras"
+            android:textColor="#ffffff"
+            android:textSize="30dp" />
+
         <Button
             android:id="@+id/viewLocales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#e7d938"
             android:onClick="buttonViewLocalesOnClick"
-            android:text="@string/viewLocales" />
+            android:text="@string/viewLocales"
+            android:textSize="30dp" />
 
         <Button
             android:id="@+id/viewCamareros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#047a17"
             android:onClick="buttonViewCamarerosOnClick"
-            android:text="@string/viewCamareros" />
+            android:text="@string/viewCamareros"
+            android:textColor="#ffffff"
+            android:textSize="30dp" />
 
         <Button
             android:id="@+id/viewCocinas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#2835a8"
             android:onClick="buttonViewCocinasOnClick"
-            android:text="@string/viewCocinas" />
+            android:text="@string/viewCocinas"
+            android:textColor="#ffffff"
+            android:textSize="30dp" />
     </LinearLayout>
 
 </RelativeLayout>

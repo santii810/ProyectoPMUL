@@ -1,25 +1,24 @@
 package sgomez.ejemplos.proyectopmul02;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import sgomez.ejemplos.proyectopmul02.model.PagoAsoc;
 
 public class AddExtra2Activity extends AppCompatActivity {
+    private final int RESULT_FINALIZAR = 1;
     EditText cobrado;
     EditText propina;
     EditText duracion;
     EditText notas;
     Spinner pagoAsociado;
-    private final int RESULT_FINALIZAR = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,16 +56,20 @@ public class AddExtra2Activity extends AppCompatActivity {
         Intent backData = new Intent();
         try {
             backData.putExtra("pagoAsociado", ((PagoAsoc) pagoAsociado.getSelectedItem()).getCantidad());
-        } catch (Exception e) {        }
+        } catch (Exception e) {
+        }
         try {
             backData.putExtra("cobrado", Integer.parseInt(cobrado.getText().toString()));
-        } catch (Exception e) {        }
+        } catch (Exception e) {
+        }
         try {
             backData.putExtra("duracion", Double.parseDouble(duracion.getText().toString()));
-        } catch (Exception e) {        }
+        } catch (Exception e) {
+        }
         try {
             backData.putExtra("propina", Double.parseDouble(propina.getText().toString()));
-        } catch (Exception e) {        }
+        } catch (Exception e) {
+        }
         backData.putExtra("notas", notas.getText().toString());
         setResult(result, backData);
         finish();

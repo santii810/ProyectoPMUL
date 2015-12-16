@@ -23,12 +23,12 @@ public class Extra {
     private double duracion;
     private ArrayList<Camarero> camareros;
 
-    public void setLocal(Local local) {
-        this.local = local;
+    public Extra() {
+
     }
 
-    public void setLocal(String idLocal) {
-        this.local = MainActivity.getLocalRepository().getLocal(idLocal);
+    public void setLocal(Local local) {
+        this.local = local;
     }
 
     public ArrayList<Camarero> getCamareros() {
@@ -59,12 +59,12 @@ public class Extra {
         return fechaExtra;
     }
 
-    public void setFechaExtra(Date fechaExtra) {
-        this.fechaExtra = fechaExtra;
-    }
-
     public void setFechaExtra(String fechaExtra) {
         this.fechaExtra = new Date(fechaExtra);
+    }
+
+    public void setFechaExtra(Date fechaExtra) {
+        this.fechaExtra = fechaExtra;
     }
 
     public String getMomentoDia() {
@@ -77,6 +77,10 @@ public class Extra {
 
     public Local getLocal() {
         return local;
+    }
+
+    public void setLocal(String idLocal) {
+        this.local = MainActivity.getLocalRepository().getLocal(idLocal);
     }
 
     public void setIdLocal(String idLocal) {
@@ -124,12 +128,12 @@ public class Extra {
         return cocina;
     }
 
-    public void setCocina(Cocina cocina) {
-        this.cocina = cocina;
-    }
-
     public void setCocina(String idCocina) {
         this.cocina = MainActivity.getCocinaRepository().getCocina(idCocina);
+    }
+
+    public void setCocina(Cocina cocina) {
+        this.cocina = cocina;
     }
 
     public String getNotas() {
@@ -146,10 +150,6 @@ public class Extra {
 
     public void setDuracion(double duracion) {
         this.duracion = duracion;
-    }
-
-    public Extra() {
-
     }
 
     @Override

@@ -1,7 +1,7 @@
 package sgomez.ejemplos.proyectopmul02;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ import sgomez.ejemplos.proyectopmul02.model.adapters.ExtraAdapter;
 public class ViewExtrasActivity extends AppCompatActivity {
     private ListView extrasListView;
     private ArrayList<Extra> extras;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,6 @@ public class ViewExtrasActivity extends AppCompatActivity {
 
         extrasListView = (ListView) findViewById(R.id.listViewViewExtras);
     }
-
 
 
     @Override

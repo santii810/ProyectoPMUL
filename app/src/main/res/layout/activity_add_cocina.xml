@@ -25,12 +25,12 @@
             android:layout_height="wrap_content" />
 
         <ToggleButton
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="120dp"
             android:id="@+id/toggleButtonCocina"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="20dp"
+            android:checked="true"
             android:textOff="@string/unactive"
             android:textOn="@string/active" />
 
@@ -42,10 +42,10 @@
 
             <Button
                 android:id="@+id/buttonAddCocina"
-                android:onClick="buttonAddCocinaOnClick"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="buttonAddCocinaOnClick"
                 android:text="@string/addCocina" />
 
             <Button

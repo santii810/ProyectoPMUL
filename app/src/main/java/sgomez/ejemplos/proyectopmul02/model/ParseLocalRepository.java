@@ -18,7 +18,8 @@ public class ParseLocalRepository implements LocalRepository {
     private final String TABLEDIRECCION = "direccionLocal";
     private final String TABLEINSERCION = "insertadoPor";
 
-    public ParseLocalRepository() {}
+    public ParseLocalRepository() {
+    }
 
     @Override
     public ArrayList<Local> getLocales() {

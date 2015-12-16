@@ -20,8 +20,8 @@
             android:text="@string/cocina" />
 
         <Spinner
-            android:layout_width="match_parent"
             android:id="@+id/spinnerCocina"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -30,8 +30,8 @@
             android:text="@string/festividad" />
 
         <Spinner
-            android:layout_width="match_parent"
             android:id="@+id/spinnerFestividad"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
 
@@ -75,9 +75,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorPrimary"
-                android:textColor="#ffffff"
                 android:onClick="buttonAddExtra3NextOnClick"
-                android:text=">>" />
+                android:text=">>"
+                android:textColor="#ffffff" />
         </LinearLayout>
 
     </LinearLayout>

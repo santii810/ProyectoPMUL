@@ -1,13 +1,12 @@
 package sgomez.ejemplos.proyectopmul02;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -74,7 +73,7 @@ public class AddExtra3Activity extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-            Toast.makeText(this, "Los datos introducidos son incorrectos", Toast.LENGTH_LONG).show();
+
         } finally {
             // Estos campos no son obligatorios por lo que permito que adelante sin complimentarlos
             setResult(result, backData);

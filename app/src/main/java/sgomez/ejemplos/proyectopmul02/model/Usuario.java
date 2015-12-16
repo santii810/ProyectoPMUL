@@ -1,7 +1,5 @@
 package sgomez.ejemplos.proyectopmul02.model;
 
-import android.widget.Toast;
-
 /**
  * Created by sgomez on 12/12/2015.
  */

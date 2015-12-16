@@ -14,15 +14,19 @@ public class Local {
         this.direccion = direccion;
     }
 
+    public Local() {
+    }
+
+    public Local(String idLocal) {
+        this.idLocal = idLocal;
+    }
+
     public String getTipoLocal() {
         return tipoLocal;
     }
 
     public void setTipoLocal(String tipoLocal) {
         this.tipoLocal = tipoLocal;
-    }
-
-    public Local() {
     }
 
     public String getDireccion() {
@@ -33,12 +37,12 @@ public class Local {
         this.direccion = direccion;
     }
 
-    public Local(String idLocal) {
-        this.idLocal = idLocal;
-    }
-
     public String getIdLocal() {
         return idLocal;
+    }
+
+    public void setIdLocal(String idLocal) {
+        this.idLocal = idLocal;
     }
 
     public String getNombre() {
@@ -49,13 +53,8 @@ public class Local {
         this.nombre = nombre;
     }
 
-    public void setIdLocal(String idLocal) {
-        this.idLocal = idLocal;
-    }
-
-
     @Override
     public String toString() {
-        return nombre ;
+        return nombre;
     }
 }

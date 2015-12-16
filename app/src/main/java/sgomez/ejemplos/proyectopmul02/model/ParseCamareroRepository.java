@@ -21,9 +21,8 @@ public class ParseCamareroRepository implements CamareroRepository {
     private final String TABLEINSERCION = "insertadoPor";
 
 
-
     public ParseCamareroRepository() {
-   
+
     }
 
     @Override

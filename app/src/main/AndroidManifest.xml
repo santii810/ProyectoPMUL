@@ -35,11 +35,8 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".ViewLocalDataActivity" />
         <activity android:name=".ViewCamarerosActivity" />
-        <activity android:name=".ViewCamareroDataActivity" />
         <activity android:name=".ViewCocinasActivity" />
-        <activity android:name=".ViewCocinaDataActivity" />
         <activity android:name=".AddExtra1Activity" />
         <activity android:name=".AddExtra2Activity" />
         <activity android:name=".AddExtra3Activity" />

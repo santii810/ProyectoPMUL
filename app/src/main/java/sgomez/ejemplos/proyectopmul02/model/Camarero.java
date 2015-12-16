@@ -13,6 +13,10 @@ public class Camarero {
         this.activo = activo;
     }
 
+    public Camarero() {
+
+    }
+
     public boolean isActivo() {
         return activo;
     }
@@ -37,12 +41,8 @@ public class Camarero {
         Nombre = nombre;
     }
 
-    public Camarero() {
-
-    }
-
     @Override
     public String toString() {
-        return Nombre ;
+        return Nombre;
     }
 }

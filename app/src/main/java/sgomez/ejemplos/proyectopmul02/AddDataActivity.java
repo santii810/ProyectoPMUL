@@ -1,8 +1,8 @@
 package sgomez.ejemplos.proyectopmul02;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -63,7 +63,7 @@ public class AddDataActivity extends AppCompatActivity {
         switch (requestCode) {
             case ADDEXTRA1_REQUEST_CODE:
                 if (resultCode == RESULT_OK) {
-                   extra.setLocal(MainActivity.getLocalRepository().getLocal(data.getStringExtra("idLocal")));
+                    extra.setLocal(MainActivity.getLocalRepository().getLocal(data.getStringExtra("idLocal")));
                     extra.setFechaExtra(new Date(data.getIntExtra("año", 0), data.getIntExtra("mes", 0), data.getIntExtra("dia", 0)));
                     Log.e("DATOS_EXTRA", extra.getFechaExtra().toString() + " _ " + extra.getLocal().getNombre());
 
@@ -77,12 +77,13 @@ public class AddDataActivity extends AppCompatActivity {
                     extra.setDuracion(data.getDoubleExtra("duracon", 0));
                     extra.setPropina(data.getDoubleExtra("propina", 0));
                     extra.setNotas(data.getStringExtra("notas"));
-                    extra.setPagoAsociado(data.getDoubleExtra("pagoAsociado",0));
+                    extra.setPagoAsociado(data.getDoubleExtra("pagoAsociado", 0));
                     if (resultCode == RESULT_OK) {
                         Intent intent = new Intent(this, AddExtra3Activity.class);
                         startActivityForResult(intent, ADDEXTRA3_REQUEST_CODE);
                     } else if (resultCode == RESULT_FINISH) {
                         MainActivity.getExtraRepository().addExtra(extra);
+                        Toast.makeText(this, "Extra añadida correctamente", Toast.LENGTH_SHORT).show();
                     }
                 }
                 break;
@@ -98,6 +99,8 @@ public class AddDataActivity extends AppCompatActivity {
                         startActivity(intent);
                     } else if (resultCode == RESULT_FINISH) {
                         MainActivity.getExtraRepository().addExtra(extra);
+                        Toast.makeText(this, "Extra añadida correctamente", Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 break;
